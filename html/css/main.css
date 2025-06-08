@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+}
+
+@font-face {
+    font-family: comic-sans-3d;
+    src: url(../font/i-hate-comic-sans.woff2);
+    font-weight: 500;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: comic-sans-3d;
+}
+
+.layers {
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.layers__container {
+    height: 100vh;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+}
+
+.layers__item {
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layer-1 {
+    transform: translateZ(-55px) scale(1.06);
+}
+
+.layer-2 {
+    transform: translateZ(80px) scale(.9);
+}
+
+.layer-3 {
+    transform: translateZ(180px) scale(.8);
+}
+
+.layer-4 {
+    transform: translateZ(190px) scale(.9);
+}
+
+.layer-5 {
+    transform: translateZ(200px) scale(.9);
+}
+
+.layer-6 {
+    transform: translateZ(380px);
+}
+
+.hero-content {
+    font-size: calc(var(--index) * 1.5);
+    text-align: center;
+}
+
+.hero-content span {
+    display: block;
+}
+
+.layer-4,
+.layer-5,
+.layer-6 {
+    pointer-events: none;
+}
