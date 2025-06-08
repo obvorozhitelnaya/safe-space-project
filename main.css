@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: comic-sans-3d;
-    src: url(../font/i-hate-comic-sans.woff2);
+    src: url('font/i-hate-comic-sans.woff2');
     font-weight: 500;
 }
 
